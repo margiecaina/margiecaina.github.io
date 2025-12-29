@@ -495,3 +495,65 @@ footer {
 .project-row {
     margin-bottom: 8rem;
 }
+
+/*Responsiveness*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #f8f4ef;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #3e2c23;
+  font-weight: 500;
+}
+
+/* Hamburger menu for small screens */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #3e2c23;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide links initially on small screens */
+    flex-direction: column;
+    background-color: #f8f4ef;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex; /* show links when hamburger clicked */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
