@@ -6,28 +6,28 @@ const highlights = [
   {
     icon: Zap,
     title: "Automation First",
-    description: "I believe in eliminating repetitive tasks through intelligent automation",
+    description: "Transforming manual workflows into elegant, scalable solutions",
   },
   {
     icon: Users,
-    title: "Team Leader",
-    description: "Managing QA teams at JP Morgan to deliver flawless products",
+    title: "QA Team Lead",
+    description: "Reviewing legal document preparation at JP Morgan for Asset & Wealth Management",
   },
   {
     icon: Code2,
-    title: "Full-Stack Thinker",
-    description: "From Python scripts to cloud architecture, I build end-to-end solutions",
+    title: "Tech-Driven Efficiency",
+    description: "Combining curiosity and creativity to build tools that improve accuracy and workflows",
   },
   {
     icon: Lightbulb,
-    title: "Problem Solver",
-    description: "Uncovering hidden issues that went unnoticed for over a decade",
+    title: "Detail-Oriented",
+    description: "Bringing elegance into functional solutions with a love for design aesthetics and minimalism",
   },
 ];
 
 const skills = [
-  "Python", "Selenium", "Playwright", "SQL", "JavaScript",
-  "React", "AWS", "CI/CD", "Agile", "Test Automation"
+  "Python", "Excel & VBA", "SQL", "Alteryx",
+  "Dashboards", "Automation", "Legal Document Review", "Process Improvement"
 ];
 
 export function AboutSection() {
@@ -47,8 +47,9 @@ export function AboutSection() {
               <span className="gradient-text">Competitive Advantage</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              As a QA Team Lead at JP Morgan, I've transformed how teams approach quality—
-              building tools that don't just find bugs, but prevent them entirely.
+              I am a Quality Analyst / Team Lead at JP Morgan, reviewing legal document preparation 
+              for asset and wealth management. I enjoy combining curiosity and creativity to build 
+              tools that improve efficiency, accuracy, and workflows.
             </p>
           </div>
 
@@ -76,19 +77,18 @@ export function AboutSection() {
               <p className="text-muted-foreground leading-relaxed">
                 My journey in tech started with a curiosity about how things work—and quickly 
                 evolved into a passion for making them work <span className="text-foreground font-medium">better</span>. 
-                At JP Morgan, I lead QA initiatives that have fundamentally changed how my team 
-                approaches quality assurance.
+                At JP Morgan, I lead QA initiatives focused on legal document preparation for 
+                Asset and Wealth Management.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 My flagship project, <span className="text-primary font-medium">QA-Assist</span>, 
-                reduced document review time from over an hour to a single click. But beyond the 
-                metrics, I'm proud of building tools that my colleagues genuinely enjoy using—
-                because the best automation is the kind people adopt without being asked.
+                is an AI-assisted solution that reduced document review time from ~1 hour to a 
+                single click, improving accuracy and consistency across the team.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                When I'm not automating workflows, you'll find me exploring new technologies, 
-                contributing to team knowledge sharing, and mentoring junior engineers on 
-                writing maintainable test code.
+                Outside work, I love design aesthetics, minimalism, and exploring ways to bring 
+                elegance into functional solutions. I believe the best tools are the ones people 
+                genuinely enjoy using.
               </p>
             </div>
 
