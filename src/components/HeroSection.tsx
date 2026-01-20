@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 
 const impactMetrics = [
@@ -74,11 +74,29 @@ export function HeroSection() {
         </p>
 
         {/* Typing Effect */}
-        <div className="h-16 flex items-center justify-center mb-12 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <div className="h-16 flex items-center justify-center mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <p className="text-lg md:text-xl text-foreground/80 font-mono">
             {typedText}
             <span className="animate-typing-cursor">|</span>
           </p>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <a
+            href="/resume.pdf"
+            download="Margie_Caina_Resume.pdf"
+            className="group flex items-center gap-2 px-6 py-3 rounded-xl gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-all hover:scale-105"
+          >
+            <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+            Download Resume
+          </a>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl border border-border hover:border-primary/50 transition-all hover:scale-105"
+          >
+            Get In Touch
+          </a>
         </div>
 
         {/* Impact Metrics */}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Send, Check, Copy } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Check, Copy, Download } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
@@ -75,6 +75,14 @@ export function ContactSection() {
                 >
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   Send Me an Email
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download="Margie_Caina_Resume.pdf"
+                  className="group flex items-center gap-2 px-6 py-3 rounded-xl border border-border hover:border-primary/50 transition-all hover:scale-105"
+                >
+                  <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                  Download Resume
                 </a>
                 <button
                   onClick={handleCopyEmail}
