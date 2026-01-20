@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -78,6 +79,7 @@ export function Navigation() {
           >
             Let's Talk
           </a>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
@@ -121,6 +123,10 @@ export function Navigation() {
           >
             Let's Talk
           </a>
+          <div className="pt-2 border-t border-border flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Theme</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>

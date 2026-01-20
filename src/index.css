@@ -6,7 +6,49 @@
 
 @layer base {
   :root {
-    /* Dark theme as default for bold aesthetic */
+    /* Light theme */
+    --background: 0 0% 100%;
+    --foreground: 240 15% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 10%;
+
+    /* Electric violet/purple as primary accent */
+    --primary: 265 89% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Cyan accent for secondary elements */
+    --secondary: 185 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 92%;
+    --muted-foreground: 240 5% 40%;
+
+    /* Gradient accents */
+    --accent: 265 89% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 265 89% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio variables */
+    --glow: 265 89% 50%;
+    --glow-secondary: 185 100% 40%;
+    --gradient-start: 265 89% 50%;
+    --gradient-end: 185 100% 40%;
+  }
+
+  .dark {
+    /* Dark theme */
     --background: 240 15% 6%;
     --foreground: 0 0% 98%;
 
@@ -16,57 +58,30 @@
     --popover: 240 15% 9%;
     --popover-foreground: 0 0% 98%;
 
-    /* Electric violet/purple as primary accent */
     --primary: 265 89% 66%;
     --primary-foreground: 0 0% 100%;
 
-    /* Cyan accent for secondary elements */
     --secondary: 185 100% 50%;
     --secondary-foreground: 240 15% 6%;
 
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 65%;
 
-    /* Gradient accents */
     --accent: 265 89% 66%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 10% 20%;
     --input: 240 10% 20%;
     --ring: 265 89% 66%;
-
-    --radius: 0.75rem;
 
     /* Custom portfolio variables */
     --glow: 265 89% 66%;
     --glow-secondary: 185 100% 50%;
     --gradient-start: 265 89% 66%;
     --gradient-end: 185 100% 50%;
-  }
-
-  .dark {
-    --background: 240 15% 6%;
-    --foreground: 0 0% 98%;
-    --card: 240 15% 9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 15% 9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 265 89% 66%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 185 100% 50%;
-    --secondary-foreground: 240 15% 6%;
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 265 89% 66%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 10% 20%;
-    --input: 240 10% 20%;
-    --ring: 265 89% 66%;
   }
 }
 
