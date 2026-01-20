@@ -222,20 +222,7 @@ function ProjectCard({ project, index, onClick }: ProjectCardProps) {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <div className="rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 h-full overflow-hidden">
-        {/* Project Image */}
-        {project.image && (
-          <div className="relative h-40 overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-          </div>
-        )}
-
-        <div className="p-6">
+      <div className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
           {/* Impact Badge */}
           <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full gradient-bg text-xs font-bold text-primary-foreground flex items-center gap-1 shadow-lg z-10">
             <Sparkles className="w-3 h-3" />
@@ -274,7 +261,6 @@ function ProjectCard({ project, index, onClick }: ProjectCardProps) {
           View Details
           <ChevronRight className="w-4 h-4" />
         </div>
-        </div>
       </div>
     </div>
   );
@@ -296,22 +282,9 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-card border border-border animate-scale-in"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-card border border-border p-6 md:p-8 animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Project Image */}
-        {project.image && (
-          <div className="relative h-48 md:h-64 overflow-hidden rounded-t-2xl">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-          </div>
-        )}
-
-        <div className="p-6 md:p-8">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -389,7 +362,6 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
             )}
           </div>
         )}
-        </div>
       </div>
     </div>
   );
