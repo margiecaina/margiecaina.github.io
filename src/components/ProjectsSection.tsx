@@ -30,8 +30,10 @@ const projects: Project[] = [
     impact: "1 hour → 1 click",
     technologies: ["Python", "AI/ML", "OCR", "PDF Processing", "DOCX"],
     category: ["highlighted", "automation", "ai"],
+    image: "https://margiecaina.github.io/images/qa-assist.png",
     links: {
-      demo: "https://margiecaina.github.io/qa-assist.html",
+      demo: "https://qa-assist.vercel.app/",
+      github: "https://github.com/margiecaina/qa-assist",
     },
     features: [
       "Upload TXT, secured/unsecured PDF, OCR (images) and DOCX files",
@@ -50,6 +52,7 @@ const projects: Project[] = [
     impact: "100% on-time",
     technologies: ["Alteryx", "Python", "Excel & VBA", "Process Automation"],
     category: ["highlighted", "automation"],
+    image: "https://margiecaina.github.io/images/email_automation_scalable.png",
     links: {
       demo: "https://margiecaina.github.io/email_automation.html",
     },
@@ -69,8 +72,10 @@ const projects: Project[] = [
     impact: "80%+ effort saved",
     technologies: ["Alteryx", "SQL", "Excel", "Data Reconciliation", "PDF Reports"],
     category: ["highlighted", "automation"],
+    image: "https://margiecaina.github.io/images/reconcilation_diagram_idea.png",
     links: {
       demo: "https://margiecaina.github.io/automated_reconciliation_system.html",
+      github: "https://github.com/margiecaina/Automated-Reconciliation-Report-Workflow",
     },
     features: [
       "Data extraction and transformation from multiple sources",
@@ -88,6 +93,7 @@ const projects: Project[] = [
     impact: "80-85% accuracy",
     technologies: ["YOLOv8", "Python", "Computer Vision", "Mobile Development", "AI/ML"],
     category: ["highlighted", "ai"],
+    image: "https://margiecaina.github.io/images/groufie_herbitech_thesis.jpg",
     links: {
       demo: "https://margiecaina.github.io/herbitech.html",
     },
@@ -216,22 +222,35 @@ function ProjectCard({ project, index, onClick }: ProjectCardProps) {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <div className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
-        {/* Impact Badge */}
-        <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full gradient-bg text-xs font-bold text-primary-foreground flex items-center gap-1 shadow-lg">
-          <Sparkles className="w-3 h-3" />
-          {project.impact}
-        </div>
+      <div className="rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 h-full overflow-hidden">
+        {/* Project Image */}
+        {project.image && (
+          <div className="relative h-40 overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+          </div>
+        )}
 
-        {/* Content */}
-        <div className="mb-4">
-          <h3 className="font-display text-xl font-bold mb-2 group-hover:gradient-text transition-all">
-            {project.title}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {project.shortDescription}
-          </p>
-        </div>
+        <div className="p-6">
+          {/* Impact Badge */}
+          <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full gradient-bg text-xs font-bold text-primary-foreground flex items-center gap-1 shadow-lg z-10">
+            <Sparkles className="w-3 h-3" />
+            {project.impact}
+          </div>
+
+          {/* Content */}
+          <div className="mb-4">
+            <h3 className="font-display text-xl font-bold mb-2 group-hover:gradient-text transition-all">
+              {project.title}
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {project.shortDescription}
+            </p>
+          </div>
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -255,6 +274,7 @@ function ProjectCard({ project, index, onClick }: ProjectCardProps) {
           View Details
           <ChevronRight className="w-4 h-4" />
         </div>
+        </div>
       </div>
     </div>
   );
@@ -276,30 +296,43 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-card border border-border p-6 md:p-8 animate-scale-in"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-card border border-border animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {/* Project Image */}
+        {project.image && (
+          <div className="relative h-48 md:h-64 overflow-hidden rounded-t-2xl">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+          </div>
+        )}
 
-        {/* Impact Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-bg text-sm font-bold text-primary-foreground mb-4">
-          <Sparkles className="w-4 h-4" />
-          {project.impact}
-        </div>
+        <div className="p-6 md:p-8">
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-background/80 hover:bg-muted transition-colors z-10"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
-        {/* Title */}
-        <h3 className="font-display text-3xl font-bold mb-4">{project.title}</h3>
+          {/* Impact Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-bg text-sm font-bold text-primary-foreground mb-4">
+            <Sparkles className="w-4 h-4" />
+            {project.impact}
+          </div>
 
-        {/* Description */}
-        <p className="text-muted-foreground leading-relaxed mb-6">
-          {project.fullDescription}
-        </p>
+          {/* Title */}
+          <h3 className="font-display text-3xl font-bold mb-4">{project.title}</h3>
+
+          {/* Description */}
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            {project.fullDescription}
+          </p>
 
         {/* Features */}
         <div className="mb-6">
@@ -356,6 +389,7 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
             )}
           </div>
         )}
+        </div>
       </div>
     </div>
   );
