@@ -3,11 +3,11 @@ import { ExternalLink, Github, X, ChevronRight, Sparkles, FileText } from "lucid
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
-// Import project images
-import qaAssistImg from "@/assets/projects/qa-assist.png";
-import emailAutomationImg from "@/assets/projects/email-automation.png";
-import reconciliationImg from "@/assets/projects/reconciliation-workflow.png";
-import herbitechImg from "@/assets/projects/herbitech.png";
+// Import abstract project visuals
+import qaAssistImg from "@/assets/projects/qa-assist-abstract.png";
+import emailAutomationImg from "@/assets/projects/email-automation-abstract.png";
+import reconciliationImg from "@/assets/projects/reconciliation-abstract.png";
+import herbitechImg from "@/assets/projects/herbitech-abstract.png";
 
 type ProjectCategory = "all" | "highlighted" | "automation" | "ai";
 
