@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 interface Particle {
   x: number;
@@ -11,6 +12,7 @@ interface Particle {
 
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -18,6 +20,8 @@ export function ParticleBackground() {
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const isDark = resolvedTheme === "dark";
 
     let animationId: number;
     let particles: Particle[] = [];
@@ -45,7 +49,11 @@ export function ParticleBackground() {
     const drawParticle = (p: Particle) => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(265, 89%, 66%, ${p.opacity})`;
+      // Use darker particles for light mode, lighter for dark mode
+      const particleColor = isDark 
+        ? `hsla(265, 89%, 66%, ${p.opacity})`
+        : `hsla(265, 80%, 45%, ${p.opacity * 0.8})`;
+      ctx.fillStyle = particleColor;
       ctx.fill();
     };
 
@@ -60,7 +68,10 @@ export function ParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `hsla(265, 89%, 66%, ${0.1 * (1 - distance / 150)})`;
+            const lineColor = isDark
+              ? `hsla(265, 89%, 66%, ${0.1 * (1 - distance / 150)})`
+              : `hsla(265, 80%, 45%, ${0.15 * (1 - distance / 150)})`;
+            ctx.strokeStyle = lineColor;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -75,7 +86,10 @@ export function ParticleBackground() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mouseX, mouseY);
-          ctx.strokeStyle = `hsla(185, 100%, 50%, ${0.15 * (1 - distance / 200)})`;
+          const mouseLineColor = isDark
+            ? `hsla(185, 100%, 50%, ${0.15 * (1 - distance / 200)})`
+            : `hsla(185, 85%, 38%, ${0.25 * (1 - distance / 200)})`;
+          ctx.strokeStyle = mouseLineColor;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -134,7 +148,7 @@ export function ParticleBackground() {
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <canvas
