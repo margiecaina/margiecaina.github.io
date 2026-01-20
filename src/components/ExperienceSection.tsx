@@ -14,35 +14,35 @@ interface TimelineItem {
 const timeline: TimelineItem[] = [
   {
     type: "work",
-    title: "QA Team Lead",
-    company: "JP Morgan Chase & Co.",
-    period: "2021 - Present",
-    description: "Leading QA automation initiatives and building tools that transform team productivity.",
+    title: "Quant Analytics Analyst (Apprenticeship)",
+    company: "JP Morgan Chase & Co. – CCB Home Lending",
+    period: "Nov 2024 - Feb 2025",
+    description: "Participated in AI and reporting initiatives in Home Lending, with focus on automation and data-driven efficiency.",
     highlights: [
-      "Built QA-Assist tool reducing document review from 1 hour to 1 click",
-      "Automated 2,000+ tickets saving thousands of hours annually",
-      "Uncovered 200+ hidden errors in legacy systems",
-      "Achieved 100% on-time delivery across all projects",
+      "Worked on AI-driven reporting solutions",
+      "Focused on automation and process optimization",
+      "Collaborated on data-driven efficiency improvements",
     ],
   },
   {
     type: "work",
-    title: "QA Automation Engineer",
-    company: "JP Morgan Chase & Co.",
-    period: "2019 - 2021",
-    description: "Developed comprehensive test automation frameworks and CI/CD integrations.",
+    title: "QA Team Lead",
+    company: "JP Morgan Chase & Co. – Asset & Wealth Management",
+    period: "Present",
+    description: "Reviewing legal document preparation and building automation tools that transform team productivity.",
     highlights: [
-      "Created modular test framework reducing development time by 60%",
-      "Implemented cross-browser testing with Selenium and Playwright",
-      "Integrated automated testing into CI/CD pipelines",
+      "Designed QA-Assist: AI-assisted solution reducing document review from ~1 hour to 1 click",
+      "Automated reconciliation of ~2,000 tickets across systems",
+      "Uncovered ~200 hidden errors that went undetected for over a decade",
+      "Built email automation achieving 100% on-time delivery",
     ],
   },
   {
     type: "education",
-    title: "Software Engineering Apprenticeship",
-    company: "MultiVerse / JP Morgan",
-    period: "2019",
-    description: "Intensive program combining hands-on development experience with formal training in software engineering principles.",
+    title: "University of Makati",
+    company: "Academic Research – Herbitech Project",
+    period: "Academic",
+    description: "Developed Herbitech: a YOLOv8-powered mobile app for real-time herbal plant identification and disease monitoring.",
   },
 ];
 
@@ -55,25 +55,22 @@ interface Certification {
 
 const certifications: Certification[] = [
   {
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credlyUrl: "https://www.credly.com",
+    name: "Google Data AI Specialization",
+    issuer: "Google / Coursera",
+    date: "Completed",
+    credlyUrl: "https://coursera.org/share/5344f626f6a8f2a9c1332c1e1b3f721a",
   },
   {
-    name: "ISTQB Certified Tester",
-    issuer: "ISTQB",
-    date: "2022",
+    name: "Alteryx Designer Advanced",
+    issuer: "Alteryx",
+    date: "Certified",
+    credlyUrl: "https://www.credly.com/badges/0633dcaa-0d96-4957-9312-8f74c9424540",
   },
   {
-    name: "Certified Scrum Master",
-    issuer: "Scrum Alliance",
-    date: "2022",
-  },
-  {
-    name: "Python Professional Certificate",
-    issuer: "Python Institute",
-    date: "2021",
+    name: "Alteryx Designer Core",
+    issuer: "Alteryx",
+    date: "Certified",
+    credlyUrl: "https://www.credly.com/badges/1ca77978-68f9-4728-9ba6-4b8299c1ee86",
   },
 ];
 

@@ -70,7 +70,7 @@ export function HeroSection() {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          QA Team Lead & Automation Engineer
+          QA Team Lead | Automation & Process Improvement Enthusiast in Asset & Wealth Management
         </p>
 
         {/* Typing Effect */}

@@ -8,26 +8,26 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  // Programming
-  { name: "Python", level: 95, category: "Programming" },
-  { name: "JavaScript/TypeScript", level: 85, category: "Programming" },
-  { name: "SQL", level: 90, category: "Programming" },
-  { name: "HTML/CSS", level: 80, category: "Programming" },
+  // Programming & Technical
+  { name: "Python", level: 90, category: "Technical" },
+  { name: "Excel & VBA", level: 95, category: "Technical" },
+  { name: "SQL", level: 85, category: "Technical" },
+  { name: "Dashboards", level: 88, category: "Technical" },
   
-  // Tools & Frameworks
-  { name: "Selenium", level: 95, category: "Tools" },
-  { name: "Playwright", level: 90, category: "Tools" },
-  { name: "Pytest", level: 90, category: "Tools" },
-  { name: "Git/GitHub", level: 88, category: "Tools" },
+  // Tools & Platforms
+  { name: "Alteryx", level: 90, category: "Tools" },
+  { name: "Data Automation", level: 92, category: "Tools" },
+  { name: "Reporting Tools", level: 88, category: "Tools" },
+  { name: "AI/ML Tools", level: 80, category: "Tools" },
   
   // Expertise
-  { name: "Test Automation", level: 95, category: "Expertise" },
-  { name: "CI/CD Pipelines", level: 85, category: "Expertise" },
-  { name: "API Testing", level: 90, category: "Expertise" },
-  { name: "Agile/Scrum", level: 88, category: "Expertise" },
+  { name: "Process Improvement", level: 95, category: "Expertise" },
+  { name: "Legal Document Review", level: 92, category: "Expertise" },
+  { name: "Automation Strategy", level: 90, category: "Expertise" },
+  { name: "Quality Assurance", level: 95, category: "Expertise" },
 ];
 
-const categories = ["Programming", "Tools", "Expertise"];
+const categories = ["Technical", "Tools", "Expertise"];
 
 export function SkillsSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -85,9 +85,9 @@ export function SkillsSection() {
             <h3 className="font-display text-xl font-semibold mb-6">Also Experienced With</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "AWS", "Docker", "Jenkins", "Jira", "Confluence",
-                "React", "REST APIs", "MongoDB", "Machine Learning",
-                "Data Analysis", "Performance Testing", "Security Testing"
+                "Data Analysis", "Workflow Optimization", "Team Leadership",
+                "Stakeholder Communication", "Requirements Gathering", "Documentation",
+                "AI Integration", "YOLOv8", "Mobile App Development"
               ].map((skill, index) => (
                 <span
                   key={skill}

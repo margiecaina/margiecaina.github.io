@@ -7,7 +7,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/margiecaina/",
+    url: "https://www.linkedin.com/in/margiecaina",
     color: "hover:text-[#0A66C2]",
   },
   {
@@ -19,7 +19,7 @@ const socialLinks = [
   {
     name: "Email",
     icon: Mail,
-    url: "mailto:contact@margiecaina.com",
+    url: "mailto:cainamargie.m@gmail.com",
     color: "hover:text-primary",
   },
 ];
@@ -29,7 +29,7 @@ export function ContactSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   const handleCopyEmail = async () => {
-    await navigator.clipboard.writeText("contact@margiecaina.com");
+    await navigator.clipboard.writeText("cainamargie.m@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -70,7 +70,7 @@ export function ContactSection() {
               {/* Email Actions */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="mailto:contact@margiecaina.com"
+                  href="mailto:cainamargie.m@gmail.com"
                   className="group flex items-center gap-2 px-6 py-3 rounded-xl gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-all hover:scale-105"
                 >
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
