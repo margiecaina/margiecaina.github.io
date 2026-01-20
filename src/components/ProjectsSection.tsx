@@ -24,78 +24,79 @@ interface Project {
 const projects: Project[] = [
   {
     id: "qa-assist",
-    title: "QA-Assist",
-    shortDescription: "AI-assisted QA solution that reduced document review time from ~1 hour to a one-click pre-review",
-    fullDescription: "Designed an AI-assisted QA solution to reduce document review time from ~1 hour to a one-click pre-review, improving accuracy and consistency across the team. The tool leverages machine learning to automatically analyze documents and identify discrepancies before human review.",
+    title: "QA-Assist Document Review System",
+    shortDescription: "Automation tool for legal document reviews that flags issues and reduces manual review time while ensuring high accuracy",
+    fullDescription: "QA-Assist is an automation tool designed to streamline the review of legal documents. By pre-checking uploaded documents and flagging potential critical issues, it drastically reduces manual review time while ensuring high accuracy and consistency. I conceptualized and proposed this tool to the LOB, demonstrating initiative and strategic thinking.",
     impact: "1 hour → 1 click",
-    technologies: ["Python", "AI/ML", "Automation", "Data Processing"],
+    technologies: ["Python", "AI/ML", "OCR", "PDF Processing", "DOCX"],
     category: ["highlighted", "automation", "ai"],
     links: {
       demo: "https://margiecaina.github.io/qa-assist.html",
     },
     features: [
-      "AI-powered document pre-review",
-      "Automated accuracy and consistency checks",
-      "One-click comprehensive analysis",
-      "Significant time savings for the team",
-      "Improved document quality standards"
+      "Upload TXT, secured/unsecured PDF, OCR (images) and DOCX files",
+      "Extract text and validate documents against compliance rules",
+      "Check consistency across multiple documents",
+      "Generate QA Summary Reports for easy review and tracking",
+      "Dynamically create checklist of required documents based on user input",
+      "Logic to skip previously reviewed or overridden documents"
     ],
   },
   {
     id: "email-automation",
     title: "Email Automation Initiative",
-    shortDescription: "Automated daily templated emails eliminating missed communications with 100% on-time delivery",
-    fullDescription: "Designed a scalable email automation system that automated daily templated emails to eliminate missed communications. The initiative removed manual dependency and ensured 100% on-time delivery, driving operational efficiency and innovation.",
+    shortDescription: "Scalable Alteryx workflow automating routine engagement and notification emails with 100% on-time delivery",
+    fullDescription: "Designed and implemented an automation workflow using Alteryx to streamline internal team communications and operational tasks. This initiative reduced repetitive administrative work and promoted a culture of innovation and automation within the team. The workflow provides a scalable, reusable automation framework applicable to any team or business unit.",
     impact: "100% on-time",
-    technologies: ["Python", "Automation", "Excel & VBA", "Process Design"],
+    technologies: ["Alteryx", "Python", "Excel & VBA", "Process Automation"],
     category: ["highlighted", "automation"],
     links: {
       demo: "https://margiecaina.github.io/email_automation.html",
     },
     features: [
-      "Automated daily templated emails",
-      "Eliminated manual dependency",
-      "Zero missed communications",
-      "Scalable design for future growth",
-      "100% on-time delivery achieved"
+      "Automates generation and sending of internal emails for engagement",
+      "Applies dynamic, data-driven validation rules for accurate record handling",
+      "Tracks invalid records and summarizes errors for reporting",
+      "Easy-to-maintain and extendable for future automation initiatives",
+      "Scalable, reusable automation framework for any team"
     ],
   },
   {
     id: "reconciliation-report",
-    title: "Automated Reconciliation Report",
-    shortDescription: "Automated reconciliation of ~2,000 tickets, uncovering ~200 hidden errors undetected for over a decade",
-    fullDescription: "Built an automated reconciliation workflow that processed ~2,000 tickets across multiple systems. The system uncovered ~200 uncreated records that had gone undetected for over 10 years, driving accuracy and operational efficiency.",
-    impact: "200+ errors found",
-    technologies: ["Python", "SQL", "Alteryx", "Data Reconciliation"],
+    title: "Automated Reconciliation Report Workflow",
+    shortDescription: "Alteryx workflow automating ticket reconciliation between multiple systems, reducing manual effort by over 80%",
+    fullDescription: "Built an Alteryx workflow that automates ticket reconciliation between multiple systems and generates daily reports. The system processed ~2,000 tickets and uncovered ~200 uncreated records that had gone undetected for over 10 years, providing quantifiable insights into anomaly counts and error trends.",
+    impact: "80%+ effort saved",
+    technologies: ["Alteryx", "SQL", "Excel", "Data Reconciliation", "PDF Reports"],
     category: ["highlighted", "automation"],
     links: {
-      demo: "https://margiecaina.github.io/reconciliation_report.html",
+      demo: "https://margiecaina.github.io/automated_reconciliation_system.html",
     },
     features: [
-      "Cross-system ticket reconciliation",
-      "Automated discrepancy detection",
-      "Historical error discovery",
-      "~2,000 tickets processed",
-      "Decade-old issues uncovered"
+      "Data extraction and transformation from multiple sources",
+      "Anomaly and malformation detection across systems",
+      "Formatted PDF and Excel report generation",
+      "Daily automated reconciliation reports",
+      "Uncovered 200+ hidden errors undetected for over a decade"
     ],
   },
   {
     id: "herbitech",
-    title: "Herbitech",
-    shortDescription: "YOLOv8-powered mobile app for real-time herbal plant identification and disease monitoring",
-    fullDescription: "Academic research project developed at the University of Makati: a YOLOv8-powered mobile app for real-time herbal plant identification and disease monitoring. The app uses computer vision to identify plants and detect potential diseases in real-time.",
-    impact: "AI-Powered",
-    technologies: ["YOLOv8", "Python", "Mobile Development", "Computer Vision"],
+    title: "Herbitech: AI Plant Identification",
+    shortDescription: "YOLOv8-powered mobile app detecting 20+ plant species and 15+ diseases with 80-85% accuracy",
+    fullDescription: "Herbitech is a research-based application designed to help Filipino herbal growers monitor the health of herbal plants. The app uses AI-powered computer vision (YOLOv8) to detect plants and identify diseases in real time, providing actionable recommendations. This reduces crop loss, minimizes reliance on chemical treatments, and supports sustainable herbal farming. Based on an undergraduate thesis submitted to the University of Makati.",
+    impact: "80-85% accuracy",
+    technologies: ["YOLOv8", "Python", "Computer Vision", "Mobile Development", "AI/ML"],
     category: ["highlighted", "ai"],
     links: {
       demo: "https://margiecaina.github.io/herbitech.html",
     },
     features: [
-      "Real-time plant identification",
-      "Disease monitoring capabilities",
-      "YOLOv8 computer vision model",
-      "Mobile-first design",
-      "Academic research application"
+      "Detection of 20+ herbal plant species",
+      "Disease identification for 15+ plant diseases",
+      "YOLOv8-based object detection with ~80-85% accuracy",
+      "Prototype mobile and web applications",
+      "Supports sustainable and efficient herbal farming"
     ],
   },
 ];
