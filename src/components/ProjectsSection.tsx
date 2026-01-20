@@ -30,6 +30,9 @@ const projects: Project[] = [
     impact: "1 hour → 1 click",
     technologies: ["Python", "AI/ML", "Automation", "Data Processing"],
     category: ["highlighted", "automation", "ai"],
+    links: {
+      demo: "https://margiecaina.github.io/qa-assist.html",
+    },
     features: [
       "AI-powered document pre-review",
       "Automated accuracy and consistency checks",
@@ -46,6 +49,9 @@ const projects: Project[] = [
     impact: "100% on-time",
     technologies: ["Python", "Automation", "Excel & VBA", "Process Design"],
     category: ["highlighted", "automation"],
+    links: {
+      demo: "https://margiecaina.github.io/email_automation.html",
+    },
     features: [
       "Automated daily templated emails",
       "Eliminated manual dependency",
@@ -62,6 +68,9 @@ const projects: Project[] = [
     impact: "200+ errors found",
     technologies: ["Python", "SQL", "Alteryx", "Data Reconciliation"],
     category: ["highlighted", "automation"],
+    links: {
+      demo: "https://margiecaina.github.io/reconciliation_report.html",
+    },
     features: [
       "Cross-system ticket reconciliation",
       "Automated discrepancy detection",
@@ -78,6 +87,9 @@ const projects: Project[] = [
     impact: "AI-Powered",
     technologies: ["YOLOv8", "Python", "Mobile Development", "Computer Vision"],
     category: ["highlighted", "ai"],
+    links: {
+      demo: "https://margiecaina.github.io/herbitech.html",
+    },
     features: [
       "Real-time plant identification",
       "Disease monitoring capabilities",
