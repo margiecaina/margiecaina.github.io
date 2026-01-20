@@ -6,45 +6,45 @@
 
 @layer base {
   :root {
-    /* Light theme */
-    --background: 0 0% 100%;
-    --foreground: 240 15% 10%;
+    /* Light theme - warm, sophisticated, not sterile */
+    --background: 40 20% 96%;
+    --foreground: 240 20% 16%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 240 15% 10%;
+    --card: 40 15% 93%;
+    --card-foreground: 240 20% 16%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 15% 10%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 240 20% 16%;
 
     /* Electric violet/purple as primary accent */
-    --primary: 265 89% 50%;
+    --primary: 265 80% 55%;
     --primary-foreground: 0 0% 100%;
 
     /* Cyan accent for secondary elements */
-    --secondary: 185 100% 40%;
+    --secondary: 185 85% 38%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 5% 92%;
-    --muted-foreground: 240 5% 40%;
+    --muted: 40 10% 88%;
+    --muted-foreground: 240 10% 40%;
 
     /* Gradient accents */
-    --accent: 265 89% 50%;
+    --accent: 265 80% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 85%;
-    --input: 240 5% 85%;
-    --ring: 265 89% 50%;
+    --border: 40 10% 82%;
+    --input: 40 10% 82%;
+    --ring: 265 80% 55%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio variables */
-    --glow: 265 89% 50%;
-    --glow-secondary: 185 100% 40%;
-    --gradient-start: 265 89% 50%;
-    --gradient-end: 185 100% 40%;
+    --glow: 265 80% 55%;
+    --glow-secondary: 185 85% 38%;
+    --gradient-start: 265 80% 55%;
+    --gradient-end: 185 85% 38%;
   }
 
   .dark {
