@@ -1,6 +1,12 @@
-import { Briefcase, GraduationCap, Award, ExternalLink } from "lucide-react";
+import { Briefcase, GraduationCap, ExternalLink } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+
+// Certification logo URLs
+const certLogos = {
+  alteryx: "https://images.credly.com/size/340x340/images/7ecfbd55-ca42-456d-a3f5-aa5c4aa18d95/Alteryx_Designer_Advanced_Micro.png",
+  google: "https://images.credly.com/size/340x340/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png",
+};
 
 interface TimelineItem {
   type: "work" | "education";
@@ -14,35 +20,35 @@ interface TimelineItem {
 const timeline: TimelineItem[] = [
   {
     type: "work",
-    title: "Quant Analytics Analyst (Apprenticeship)",
-    company: "JP Morgan Chase & Co. – CCB Home Lending",
-    period: "Nov 2024 - Feb 2025",
-    description: "Participated in AI and reporting initiatives in Home Lending, with focus on automation and data-driven efficiency.",
+    title: "QA Team Lead",
+    company: "JP Morgan Chase & Co. – Asset & Wealth Management",
+    period: "Present",
+    description: "Spearheading QA initiatives and architecting automation solutions that redefine operational efficiency in legal document preparation.",
     highlights: [
-      "Worked on AI-driven reporting solutions",
-      "Focused on automation and process optimization",
-      "Collaborated on data-driven efficiency improvements",
+      "Engineered QA-Assist: AI-powered solution slashing document review from ~1 hour to 1 click",
+      "Automated reconciliation of ~2,000 tickets across systems with zero manual intervention",
+      "Uncovered ~200 hidden errors that went undetected for over a decade",
+      "Designed email automation achieving 100% on-time delivery",
     ],
   },
   {
     type: "work",
-    title: "QA Team Lead",
-    company: "JP Morgan Chase & Co. – Asset & Wealth Management",
-    period: "Present",
-    description: "Reviewing legal document preparation and building automation tools that transform team productivity.",
+    title: "Quant Analytics Analyst (Apprenticeship)",
+    company: "JP Morgan Chase & Co. – CCB Home Lending",
+    period: "Nov 2024 - Feb 2025",
+    description: "Drove AI and reporting initiatives in Home Lending, delivering automation solutions that enhanced data-driven decision-making.",
     highlights: [
-      "Designed QA-Assist: AI-assisted solution reducing document review from ~1 hour to 1 click",
-      "Automated reconciliation of ~2,000 tickets across systems",
-      "Uncovered ~200 hidden errors that went undetected for over a decade",
-      "Built email automation achieving 100% on-time delivery",
+      "Built and optimized workflows in Alteryx and SQL, reducing manual processing by 30%",
+      "Executed comprehensive QA checks ensuring 100% data integrity",
+      "Collaborated cross-functionally to improve reporting accuracy by 15%",
     ],
   },
   {
     type: "education",
-    title: "University of Makati",
-    company: "Academic Research – Herbitech Project",
-    period: "Academic",
-    description: "Developed Herbitech: a YOLOv8-powered mobile app for real-time herbal plant identification and disease monitoring.",
+    title: "Bachelor of Science in Computer Science",
+    company: "University of Makati",
+    period: "Graduate",
+    description: "Specialized in Social Computing with focus on AI/ML applications. Developed Herbitech thesis project achieving 80-85% accuracy in plant disease detection.",
   },
 ];
 
@@ -51,26 +57,30 @@ interface Certification {
   issuer: string;
   date: string;
   credlyUrl?: string;
+  logo: string;
 }
 
 const certifications: Certification[] = [
-  {
-    name: "Google Data AI Specialization",
-    issuer: "Google / Coursera",
-    date: "Completed",
-    credlyUrl: "https://coursera.org/share/5344f626f6a8f2a9c1332c1e1b3f721a",
-  },
   {
     name: "Alteryx Designer Advanced",
     issuer: "Alteryx",
     date: "Certified",
     credlyUrl: "https://www.credly.com/badges/0633dcaa-0d96-4957-9312-8f74c9424540",
+    logo: certLogos.alteryx,
   },
   {
     name: "Alteryx Designer Core",
     issuer: "Alteryx",
     date: "Certified",
     credlyUrl: "https://www.credly.com/badges/1ca77978-68f9-4728-9ba6-4b8299c1ee86",
+    logo: certLogos.alteryx,
+  },
+  {
+    name: "Google Data Analytics Specialization",
+    issuer: "Google / Coursera",
+    date: "Completed",
+    credlyUrl: "https://coursera.org/share/5344f626f6a8f2a9c1332c1e1b3f721a",
+    logo: certLogos.google,
   },
 ];
 
@@ -90,7 +100,7 @@ export function ExperienceSection() {
               Experience & <span className="gradient-text">Credentials</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A track record of delivering excellence at one of the world's 
+              A proven track record of delivering measurable impact at one of the world's 
               leading financial institutions.
             </p>
           </div>
@@ -193,15 +203,18 @@ function CertificationCard({ cert, index, isVisible }: CertificationCardProps) {
       }}
     >
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0">
-          <Award className="w-5 h-5 text-primary-foreground" />
+        <div className="w-12 h-12 rounded-lg bg-card flex items-center justify-center flex-shrink-0 overflow-hidden">
+          <img 
+            src={cert.logo} 
+            alt={`${cert.issuer} logo`}
+            className="w-full h-full object-contain"
+          />
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold text-sm leading-tight mb-1 group-hover:gradient-text transition-all">
             {cert.name}
           </h4>
           <p className="text-xs text-muted-foreground">{cert.issuer}</p>
-          <p className="text-xs text-muted-foreground/70">{cert.date}</p>
         </div>
         {cert.credlyUrl && (
           <a

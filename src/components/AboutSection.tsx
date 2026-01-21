@@ -5,23 +5,23 @@ import { cn } from "@/lib/utils";
 const highlights = [
   {
     icon: Zap,
-    title: "Automation First",
-    description: "Transforming manual workflows into elegant, scalable solutions",
+    title: "Automation Architect",
+    description: "Engineering solutions that eliminate hours of manual work with a single click",
   },
   {
     icon: Users,
     title: "QA Team Lead",
-    description: "Reviewing legal document preparation at JP Morgan for Asset & Wealth Management",
+    description: "Leading quality initiatives at JP Morgan for Asset & Wealth Management",
   },
   {
     icon: Code2,
-    title: "Tech-Driven Efficiency",
-    description: "Combining curiosity and creativity to build tools that improve accuracy and workflows",
+    title: "Impact-Driven",
+    description: "Building tools that deliver measurable ROI: 2,000+ tickets automated, 200+ errors uncovered",
   },
   {
     icon: Lightbulb,
-    title: "Detail-Oriented",
-    description: "Bringing elegance into functional solutions with a love for design aesthetics and minimalism",
+    title: "Strategic Thinker",
+    description: "Identifying bottlenecks and architecting scalable solutions that multiply team productivity",
   },
 ];
 
@@ -43,13 +43,13 @@ export function AboutSection() {
               About Me
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Turning Quality Into a{" "}
-              <span className="gradient-text">Competitive Advantage</span>
+              Engineering{" "}
+              <span className="gradient-text">Enterprise Impact</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I am a Quality Analyst / Team Lead at JP Morgan, reviewing legal document preparation 
-              for asset and wealth management. I enjoy combining curiosity and creativity to build 
-              tools that improve efficiency, accuracy, and workflows.
+              QA Team Lead at JP Morgan, transforming complex legal document workflows 
+              into streamlined, automated systems. I don't just find problems—I architect 
+              solutions that scale.
             </p>
           </div>
 
@@ -75,20 +75,19 @@ export function AboutSection() {
             {/* Text Content */}
             <div className="space-y-6">
               <p className="text-muted-foreground leading-relaxed">
-                My journey in tech started with a curiosity about how things work—and quickly 
-                evolved into a passion for making them work <span className="text-foreground font-medium">better</span>. 
-                At JP Morgan, I lead QA initiatives focused on legal document preparation for 
-                Asset and Wealth Management.
+                At JP Morgan, I lead QA initiatives that go beyond testing—I identify 
+                operational bottlenecks and build automation systems that deliver 
+                <span className="text-foreground font-medium"> measurable, lasting impact</span>.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 My flagship project, <span className="text-primary font-medium">QA-Assist</span>, 
-                is an AI-assisted solution that reduced document review time from ~1 hour to a 
-                single click, improving accuracy and consistency across the team.
+                exemplifies my approach: an AI-powered solution I conceptualized and proposed that 
+                slashed document review from ~1 hour to a single click—eliminating manual effort 
+                while dramatically improving accuracy.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Outside work, I love design aesthetics, minimalism, and exploring ways to bring 
-                elegance into functional solutions. I believe the best tools are the ones people 
-                genuinely enjoy using.
+                I believe the best automation isn't just efficient—it's invisible. The tools 
+                I build let teams focus on high-value work while the system handles the rest.
               </p>
             </div>
 

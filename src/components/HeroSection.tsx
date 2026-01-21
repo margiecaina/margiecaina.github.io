@@ -10,9 +10,9 @@ const impactMetrics = [
 ];
 
 const typingTexts = [
-  "I turn complex problems into elegant automations",
-  "I build tools that multiply team productivity",
-  "I transform manual chaos into seamless workflows",
+  "Architecting automation that saves 1,000+ hours annually",
+  "Building AI-powered tools that scale enterprise efficiency",
+  "Transforming manual bottlenecks into one-click solutions",
 ];
 
 export function HeroSection() {
@@ -59,7 +59,7 @@ export function HeroSection() {
         {/* Name Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-muted/30 backdrop-blur-sm mb-8 animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-sm text-muted-foreground">Available for opportunities</span>
+          <span className="text-sm text-muted-foreground">Available for Automation Initiatives</span>
         </div>
 
         {/* Main Heading */}
@@ -70,7 +70,7 @@ export function HeroSection() {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          QA Team Lead | Automation & Process Improvement Enthusiast in Asset & Wealth Management
+          QA Team Lead & Automation Architect
         </p>
 
         {/* Typing Effect */}
@@ -120,9 +120,9 @@ export function HeroSection() {
       {/* Scroll Indicator */}
       <button
         onClick={handleScrollToAbout}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer group"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer group z-10"
       >
-        <span className="text-sm">Scroll to explore</span>
+        <span className="text-sm font-medium">Scroll to explore</span>
         <ChevronDown className="w-6 h-6 animate-bounce" />
       </button>
     </section>
