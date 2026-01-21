@@ -1,33 +1,40 @@
-import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
+import { Zap, Database, Brain } from "lucide-react";
 
-interface Skill {
+interface SkillCategory {
   name: string;
-  level: number;
-  category: string;
+  icon: typeof Zap;
+  skills: string[];
+  impactStatement: string;
 }
 
-const skills: Skill[] = [
-  // Programming & Technical
-  { name: "Python", level: 90, category: "Technical" },
-  { name: "Excel & VBA", level: 95, category: "Technical" },
-  { name: "SQL", level: 85, category: "Technical" },
-  { name: "Dashboards", level: 88, category: "Technical" },
-  
-  // Tools & Platforms
-  { name: "Alteryx", level: 90, category: "Tools" },
-  { name: "Data Automation", level: 92, category: "Tools" },
-  { name: "Reporting Tools", level: 88, category: "Tools" },
-  { name: "AI/ML Tools", level: 80, category: "Tools" },
-  
-  // Expertise
-  { name: "Process Improvement", level: 95, category: "Expertise" },
-  { name: "Legal Document Review", level: 92, category: "Expertise" },
-  { name: "Automation Strategy", level: 90, category: "Expertise" },
-  { name: "Quality Assurance", level: 95, category: "Expertise" },
+const skillCategories: SkillCategory[] = [
+  {
+    name: "Technical",
+    icon: Database,
+    skills: ["Python", "Excel & VBA", "SQL", "Dashboards"],
+    impactStatement: "Building robust data pipelines and analytics solutions",
+  },
+  {
+    name: "Tools",
+    icon: Zap,
+    skills: ["Alteryx", "Data Automation", "Reporting Tools", "AI/ML Tools"],
+    impactStatement: "Leveraging enterprise-grade platforms for scalable automation",
+  },
+  {
+    name: "Expertise",
+    icon: Brain,
+    skills: ["Process Improvement", "Legal Document Review", "Automation Strategy", "Quality Assurance"],
+    impactStatement: "Transforming complex workflows into streamlined operations",
+  },
 ];
 
-const categories = ["Technical", "Tools", "Expertise"];
+const additionalSkills = [
+  "Data Analysis", "Workflow Optimization", "Team Leadership",
+  "Stakeholder Communication", "Requirements Gathering", "Documentation",
+  "AI Integration", "YOLOv8", "Mobile App Development"
+];
 
 export function SkillsSection() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -48,34 +55,55 @@ export function SkillsSection() {
               My <span className="gradient-text">Technical Arsenal</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Years of hands-on experience building robust automation systems and 
-              leading quality initiatives at enterprise scale.
+              Battle-tested expertise from building enterprise automation systems 
+              at scale.
             </p>
           </div>
 
-          {/* Skills by Category */}
+          {/* Skills by Category - Clean Lists */}
           <div className="grid lg:grid-cols-3 gap-8">
-            {categories.map((category, catIndex) => (
+            {skillCategories.map((category, catIndex) => (
               <div
-                key={category}
-                className="space-y-6"
-                style={{ transitionDelay: `${catIndex * 150}ms` }}
+                key={category.name}
+                className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? "translateY(0)" : "translateY(20px)",
+                  transition: `opacity 0.5s ease-out ${catIndex * 150}ms, transform 0.5s ease-out ${catIndex * 150}ms`,
+                }}
               >
-                <h3 className="font-display text-xl font-semibold text-center lg:text-left">
-                  {category}
-                </h3>
-                <div className="space-y-4">
-                  {skills
-                    .filter((s) => s.category === category)
-                    .map((skill, index) => (
-                      <SkillBar
-                        key={skill.name}
-                        skill={skill}
-                        isVisible={isVisible}
-                        delay={(catIndex * 4 + index) * 100}
-                      />
-                    ))}
+                {/* Category Header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold">
+                    {category.name}
+                  </h3>
                 </div>
+
+                {/* Skills List */}
+                <ul className="space-y-3 mb-4">
+                  {category.skills.map((skill, index) => (
+                    <li 
+                      key={skill}
+                      className="flex items-center gap-3 text-foreground"
+                      style={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? "translateX(0)" : "translateX(-10px)",
+                        transition: `opacity 0.3s ease-out ${(catIndex * 4 + index) * 50 + 300}ms, transform 0.3s ease-out ${(catIndex * 4 + index) * 50 + 300}ms`,
+                      }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full gradient-bg flex-shrink-0" />
+                      <span className="font-medium">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Impact Statement */}
+                <p className="text-sm text-muted-foreground italic border-t border-border/50 pt-4">
+                  {category.impactStatement}
+                </p>
               </div>
             ))}
           </div>
@@ -84,11 +112,7 @@ export function SkillsSection() {
           <div className="mt-16 text-center">
             <h3 className="font-display text-xl font-semibold mb-6">Also Experienced With</h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Data Analysis", "Workflow Optimization", "Team Leadership",
-                "Stakeholder Communication", "Requirements Gathering", "Documentation",
-                "AI Integration", "YOLOv8", "Mobile App Development"
-              ].map((skill, index) => (
+              {additionalSkills.map((skill, index) => (
                 <span
                   key={skill}
                   className={cn(
@@ -97,6 +121,10 @@ export function SkillsSection() {
                       ? "border-primary/30 text-primary hover:bg-primary/10"
                       : "border-secondary/30 text-secondary hover:bg-secondary/10"
                   )}
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transition: `opacity 0.3s ease-out ${index * 50 + 500}ms`,
+                  }}
                 >
                   {skill}
                 </span>
@@ -106,40 +134,5 @@ export function SkillsSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-interface SkillBarProps {
-  skill: Skill;
-  isVisible: boolean;
-  delay: number;
-}
-
-function SkillBar({ skill, isVisible, delay }: SkillBarProps) {
-  const count = useCountUp(skill.level, 1500, 0, isVisible);
-
-  return (
-    <div
-      className="space-y-2"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateX(0)" : "translateX(-20px)",
-        transition: `opacity 0.5s ease-out ${delay}ms, transform 0.5s ease-out ${delay}ms`,
-      }}
-    >
-      <div className="flex justify-between items-center">
-        <span className="text-sm font-medium">{skill.name}</span>
-        <span className="text-sm text-muted-foreground font-mono">{count}%</span>
-      </div>
-      <div className="h-2 rounded-full bg-muted overflow-hidden">
-        <div
-          className="h-full rounded-full gradient-bg transition-all duration-1000 ease-out"
-          style={{
-            width: isVisible ? `${skill.level}%` : "0%",
-            transitionDelay: `${delay}ms`,
-          }}
-        />
-      </div>
-    </div>
   );
 }
