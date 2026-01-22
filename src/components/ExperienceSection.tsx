@@ -44,13 +44,6 @@ const timeline: TimelineItem[] = [
       "Collaborated cross-functionally to improve reporting accuracy by 15%",
     ],
   },
-  {
-    type: "education",
-    title: "Bachelor of Science in Computer Science",
-    company: "University of Makati",
-    period: "Graduate",
-    description: "Specialized in Social Computing with focus on AI/ML applications. Developed Herbitech thesis project achieving 80-85% accuracy in plant disease detection.",
-  },
 ];
 
 interface Certification {
