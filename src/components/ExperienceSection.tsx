@@ -2,11 +2,15 @@ import { Briefcase, GraduationCap, ExternalLink } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
-// Certification logo URLs - using reliable CDN sources
+import alteryxAdvancedBadge from "@/assets/certifications/alteryx-designer-advanced.png";
+import alteryxCoreBadge from "@/assets/certifications/alteryx-designer-core.png";
+import googleDataAnalyticsBadge from "@/assets/certifications/google-data-analytics.png";
+
+// Certification logos - stored locally for reliability (avoids CDN blocking/403s)
 const certLogos = {
-  alteryxAdvanced: "https://images.credly.com/images/7ecfbd55-ca42-456d-a3f5-aa5c4aa18d95/Alteryx_Designer_Advanced_Micro.png",
-  alteryxCore: "https://images.credly.com/images/14744318-8d6a-49c3-971d-6571b3a1230f/Alteryx_Designer_Core_Micro.png",
-  google: "https://images.credly.com/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png",
+  alteryxAdvanced: alteryxAdvancedBadge,
+  alteryxCore: alteryxCoreBadge,
+  google: googleDataAnalyticsBadge,
 };
 
 interface TimelineItem {
@@ -202,6 +206,11 @@ function CertificationCard({ cert, index, isVisible }: CertificationCardProps) {
             src={cert.logo} 
             alt={`${cert.issuer} logo`}
             className="w-full h-full object-contain"
+            loading="lazy"
+            onError={(e) => {
+              // Fallback if an asset fails to load for any reason
+              e.currentTarget.src = "/placeholder.svg";
+            }}
           />
         </div>
         <div className="flex-1 min-w-0">
