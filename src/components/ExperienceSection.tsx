@@ -2,10 +2,11 @@ import { Briefcase, GraduationCap, ExternalLink } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 
-// Certification logo URLs
+// Certification logo URLs - using reliable CDN sources
 const certLogos = {
-  alteryx: "https://images.credly.com/size/340x340/images/7ecfbd55-ca42-456d-a3f5-aa5c4aa18d95/Alteryx_Designer_Advanced_Micro.png",
-  google: "https://images.credly.com/size/340x340/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png",
+  alteryxAdvanced: "https://images.credly.com/images/7ecfbd55-ca42-456d-a3f5-aa5c4aa18d95/Alteryx_Designer_Advanced_Micro.png",
+  alteryxCore: "https://images.credly.com/images/14744318-8d6a-49c3-971d-6571b3a1230f/Alteryx_Designer_Core_Micro.png",
+  google: "https://images.credly.com/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png",
 };
 
 interface TimelineItem {
@@ -66,14 +67,14 @@ const certifications: Certification[] = [
     issuer: "Alteryx",
     date: "Certified",
     credlyUrl: "https://www.credly.com/badges/0633dcaa-0d96-4957-9312-8f74c9424540",
-    logo: certLogos.alteryx,
+    logo: certLogos.alteryxAdvanced,
   },
   {
     name: "Alteryx Designer Core",
     issuer: "Alteryx",
     date: "Certified",
     credlyUrl: "https://www.credly.com/badges/1ca77978-68f9-4728-9ba6-4b8299c1ee86",
-    logo: certLogos.alteryx,
+    logo: certLogos.alteryxCore,
   },
   {
     name: "Google Data Analytics Specialization",
