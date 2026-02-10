@@ -59,7 +59,7 @@ export const Herbitech = () => {
             {/* Action Buttons - Full showcase */}
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="gap-2">
-                <a href="https://margiecaina.github.io/web_herbitech_thesis/FINALGROUP4THESISACSSC_TOPRINT_.docx.html" target="_blank" rel="noopener noreferrer">
+                <a href="https://herbitech.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4" />
                   Web Demo
                 </a>
