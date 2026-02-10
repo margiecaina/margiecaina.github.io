@@ -304,7 +304,7 @@ export const Herbitech = () => {
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">
-                <a href="https://margiecaina.github.io/herbitech_thesis.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://margiecaina.github.io/web_herbitech_thesis/FINALGROUP4THESISACSSC_TOPRINT_.docx.html" target="_blank" rel="noopener noreferrer">
                   Read Full Paper
                 </a>
               </Button>

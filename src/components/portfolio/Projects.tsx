@@ -67,7 +67,7 @@ const projects = [
     route: "/projects/herbitech",
     links: {
       demo: "https://margiecaina.github.io/web_herbitech_thesis/FINALGROUP4THESISACSSC_TOPRINT_.docx.html",
-      github: "https://github.com/margiecaina/Herbitech",
+      github: "https://herbitech.vercel.app/",
     },
   },
 ];
